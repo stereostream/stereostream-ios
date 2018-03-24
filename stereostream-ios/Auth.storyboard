@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14105" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zna-xj-JrN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auth-->
+        <scene sceneID="8wF-nl-94r">
+            <objects>
+                <viewController storyboardIdentifier="Auth" title="Sign in/up" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ttV-FM-Af6" userLabel="Auth" customClass="AuthVC" customModule="stereostream_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cRP-xe-3aA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8VS-FJ-tOo" userLabel="Credentials">
+                                <rect key="frame" x="8" y="101" width="359" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ns1-I8-r9w">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MN5-II-lfa"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" smartDashesType="no" smartQuotesType="no" textContentType="email"/>
+                                        <connections>
+                                            <action selector="emailEdited:" destination="ttV-FM-Af6" eventType="editingDidBegin" id="ioa-8M-5Y1"/>
+                                            <action selector="emailPrimaryAction:" destination="ttV-FM-Af6" eventType="primaryActionTriggered" id="vm8-0d-auX"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaY-uH-BFt">
+                                        <rect key="frame" x="0.0" y="50" width="359" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="qbc-3D-cyv"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <connections>
+                                            <action selector="passwordEdited:" destination="ttV-FM-Af6" eventType="editingDidBegin" id="jiI-A6-ZvR"/>
+                                            <action selector="passwordPrimaryAction:" destination="ttV-FM-Af6" eventType="primaryActionTriggered" id="NxP-oe-27k"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEf-07-u7M" userLabel="Sign in/up btn">
+                                <rect key="frame" x="129.5" y="209" width="115" height="45"/>
+                                <accessibility key="accessibilityConfiguration" hint="Sign in/up" identifier="Sign in/up" label="Sign in/up">
+                                    <accessibilityTraits key="traits" button="YES" causesPageTurn="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="Sign in/up"/>
+                                <connections>
+                                    <action selector="onSignInUpClicked:" destination="ttV-FM-Af6" eventType="touchUpInside" id="pZu-OD-ieh"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="ServerStatusStackView" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nii-sK-uia" userLabel="ServerStatusStackView">
+                                <rect key="frame" x="8" y="604" width="359" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jm2-aP-r24">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mv-kD-ZvE">
+                                        <rect key="frame" x="0.0" y="27.5" width="359" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lzW-Nn-FMb" firstAttribute="trailing" secondItem="Nii-sK-uia" secondAttribute="trailing" constant="8" id="3OH-lm-XjH"/>
+                            <constraint firstItem="kEf-07-u7M" firstAttribute="top" secondItem="8VS-FJ-tOo" secondAttribute="bottom" constant="8" id="QvZ-Xj-CD0"/>
+                            <constraint firstItem="Nii-sK-uia" firstAttribute="leading" secondItem="lzW-Nn-FMb" secondAttribute="leading" constant="8" id="RjJ-Y5-81b"/>
+                            <constraint firstItem="8VS-FJ-tOo" firstAttribute="top" secondItem="lzW-Nn-FMb" secondAttribute="top" constant="37" id="XuF-01-lco"/>
+                            <constraint firstItem="lzW-Nn-FMb" firstAttribute="trailing" secondItem="8VS-FJ-tOo" secondAttribute="trailing" constant="8" id="fzP-rK-B5B"/>
+                            <constraint firstItem="lzW-Nn-FMb" firstAttribute="bottom" secondItem="Nii-sK-uia" secondAttribute="bottom" constant="8" id="lZc-Dw-Yji"/>
+                            <constraint firstItem="kEf-07-u7M" firstAttribute="centerX" secondItem="lzW-Nn-FMb" secondAttribute="centerX" id="nqR-Lx-eTw"/>
+                            <constraint firstItem="8VS-FJ-tOo" firstAttribute="leading" secondItem="lzW-Nn-FMb" secondAttribute="leading" constant="8" id="rzb-f7-wgL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lzW-Nn-FMb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="StereoStream" id="w3d-UO-sIx">
+                        <barButtonItem key="rightBarButtonItem" id="tat-he-aNh" userLabel="Settings">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="SettingsBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h92-xU-TEn" userLabel="SettingsBtn">
+                                <rect key="frame" x="335" y="10" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Settings" identifier="Settings" label="Settings"/>
+                                <state key="normal" image="ic_settings"/>
+                                <connections>
+                                    <segue destination="I4V-QT-dxm" kind="show" id="zFA-R5-roJ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="apiUrl" destination="jm2-aP-r24" id="b3s-rM-AJb"/>
+                        <outlet property="apiVersion" destination="6Mv-kD-ZvE" id="CwX-oV-ZaS"/>
+                        <outlet property="email" destination="Ns1-I8-r9w" id="DvL-zR-0YL"/>
+                        <outlet property="password" destination="YaY-uH-BFt" id="lHN-iv-Pku"/>
+                        <outlet property="serverStatusStackView" destination="Nii-sK-uia" id="2q4-dy-u6D"/>
+                        <outlet property="signInUpBtn" destination="kEf-07-u7M" id="Sd8-Z6-StC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFP-3i-aIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="144.3778110944528"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="3u5-FM-yCj">
+            <objects>
+                <viewController storyboardIdentifier="Settings" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4V-QT-dxm" customClass="SettingsVC" customModule="stereostream_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfk-CD-pXD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="hostname" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://localhost:3000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6rK-SX-n0u" userLabel="hostname">
+                                <rect key="frame" x="8" y="72" width="359" height="50"/>
+                                <accessibility key="accessibilityConfiguration" hint="API hostname" identifier="API hostname" label="API hostname"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sAj-Rv-cON"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="route" smartDashesType="no" smartQuotesType="no" textContentType="email"/>
+                                <connections>
+                                    <action selector="hostnameEditBegun:" destination="I4V-QT-dxm" eventType="editingDidBegin" id="NXD-fd-39u"/>
+                                    <action selector="hostnamePrimaryAction:" destination="I4V-QT-dxm" eventType="primaryActionTriggered" id="Cm2-Cw-MMu"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JF5-LM-YCP">
+                                <rect key="frame" x="153" y="130" width="68" height="45"/>
+                                <accessibility key="accessibilityConfiguration" hint="Save" identifier="Save" label="Save">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="Route"/>
+                                <connections>
+                                    <action selector="onSubmit:" destination="I4V-QT-dxm" eventType="touchUpInside" id="PeM-aK-5Rv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JF5-LM-YCP" firstAttribute="centerX" secondItem="3Rb-rY-bh2" secondAttribute="centerX" id="3Kv-pp-t9P"/>
+                            <constraint firstItem="6rK-SX-n0u" firstAttribute="top" secondItem="3Rb-rY-bh2" secondAttribute="top" constant="8" id="LFr-Kq-wXa"/>
+                            <constraint firstItem="6rK-SX-n0u" firstAttribute="leading" secondItem="3Rb-rY-bh2" secondAttribute="leading" constant="8" id="ZP0-8D-RXh"/>
+                            <constraint firstItem="3Rb-rY-bh2" firstAttribute="trailing" secondItem="6rK-SX-n0u" secondAttribute="trailing" constant="8" id="r8l-r2-Xkg"/>
+                            <constraint firstItem="JF5-LM-YCP" firstAttribute="top" secondItem="6rK-SX-n0u" secondAttribute="bottom" constant="8" id="rbh-sg-kc8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Rb-rY-bh2"/>
+                    </view>
+                    <connections>
+                        <outlet property="hostname" destination="6rK-SX-n0u" id="UtU-RN-Pjj"/>
+                        <outlet property="route" destination="JF5-LM-YCP" id="6Ey-X4-Lz1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JsC-Hr-cDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ala-M4-xf0">
+            <objects>
+                <navigationController storyboardIdentifier="AuthNavigator" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zna-xj-JrN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JWz-PH-D8j">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ttV-FM-Af6" kind="relationship" relationship="rootViewController" id="kp1-NO-Obk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0M-zl-2Ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.200000000000003" y="144.3778110944528"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_settings" width="24" height="24"/>
+    </resources>
+</document>
